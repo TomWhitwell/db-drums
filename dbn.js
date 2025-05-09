@@ -129,7 +129,7 @@ function togglePlay() {
         btn.textContent = 'Play';
     } else {
         if (isNaN(bpm)) return;
-        const duration = 60000 / bpm / 2;
+        const duration = 60000 / bpm / 4;
         stepInterval = setInterval(playStep, duration);
         isPlaying = true;
         btn.textContent = 'Pause';
@@ -142,7 +142,7 @@ function updateBPM() {
 
     if (isPlaying && !isNaN(bpm)) {
         clearInterval(stepInterval);
-        const duration = 60000 / bpm / 2;
+        const duration = 60000 / bpm / 4;
         stepInterval = setInterval(playStep, duration);
     }
 }
